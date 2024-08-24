@@ -1,7 +1,49 @@
-# primer_proy
-#Durante los últimos años, el agua ha sido un problema en Querétaro, y siempre vemos empresas que dicen que tengas cuidado con el agua e incluso dan tips acerca de cómo cuidarla, pero ninguna empresa como tal ha desarrollado alguna aplicación que en verdad te ayude a rastrear tu uso del agua, por lo cual durante este proyecto, la idea principal es basándonos en el uso de agua en los recibos poder rastrear cómo se aumenta el agua y qué porcentaje se va aumentando a comparación de los meses o incluso los días pasados, este proyecto me llama mucho la atención, ya que no sólo resuelves una problemática acerca de por qué el precio subió del agua este mes, o algún problema.
+print("Hola, este software te va a ayudar a rastrear tu consumo de agua")
+print("Campanario(1)\nEl refugio(2)\nAlamos(3)\nJuriquilla(4)\nJurica(5)\nCentro(6)\nEl Pueblito(7)")
+opcion_qro=int(input("En que parte de Queretaro vives, introduce el numero junto a la opcion"))
+if(opcion_qro==1):
+    print("hola")
+#suma1 a campanario
+elif(opcion_qro==2):
+    print("hola")
+#suma 1 a el refugio
+elif(opcion_qro==3):
+    print("hola")
+#suma 1 a alamos
+elif(opcion_qro==4):
+    print("hola")
+#suma 1 a juriquilla
+elif(opcion_qro==5):
+    print("hola")
+#suma 1 a jurica
+elif(opcion_qro==6):
+    print("hola")
+#suma 1 a el centro
+elif(opcion_qro==7):
+    print("hola")
+#suma 1 a el pueblito
 
-#También resuelves otro problema y tomas conciencia acerca del problema que hay con el agua en Querétaro, y a su vez te vas dando cuenta de qué tan problemático con el agua, puede ser tú, esta aplicación o este programa pueda ayudar al insertar tus datos acerca de tu consumo de agua y los precios que pagas esto lo mandará un archivo de Excel en el cual podrás hacer una comparación, también podrás poner el municipio en el que vives en Querétaro para así comparando las tablas de Excel poder ver qué municipios es el que más gasta agua y que soluciones probables hay para el gasto que sea mayor en el municipio. Al ingresar los datos, estar una comparación de los meses pasados. Esto se va a hacer gracias a las variables de Python y asimismo, al momento de que ingrese los datos te dará una comparación de si este mes subiste tu consumo del agua o lo bajaste, y dependiendo de si lo subiste lo bajaste cuál es la diferencia de Precio y al mismo tiempo saber la cantidad de agua que ahorraste, y como esto puede beneficiar al planeta. Siento que este proyecto puede ser muy importante, ya que esto puede ayudar mucho a los queretanos a tomar conciencia y asimismo poder ayudar a las generaciones futuras a poder seguir disfrutando del agua, pero haciéndolo conscientemente y así puedan utilizar este mismo programa para calcular su consumo del agua. Queretaro se posiciona en el 6 estado de mexico con el mayor estres hidraulico en el pais. Este dato fue registrado en el año 2022 por el periodico "animal politico" Fuente:https://animalpolitico.com/estados/queretaro-estres-hidrico-contaminacion-urbanizacion-escasez-agua
-
-
-#En conclusión este proyecto puede ayudar demasiado ya que al momento de saber los datos acerca del agua, podemos darnos cuenta de nuestro consumo del agua, y así vamos a ser capaces de poder considerar lo que estamos haciendo con el agua en nuestra casa, y tal vez poner límites acerca del uso de agua para poder gastar menos, y poder desperdiciar menos agua. 
+#Aqui va a ir un contador de cuando seleccionen en que parte viven poder hacer un conteo acerca de cuanta agua consume cada parte de Qro
+print("Comparar precios del agua del mes actual y el ultimo(1)\nPoner una meta acerca del uso del agua(2)\n\
+Ver información acerca del agua en Queretaro(3)\n")
+opcion_agua=int(input("Que opcion quieres realizar?"))
+if(opcion_agua==1):
+    precio_1=int(input("Cual fue el precio de tu recibo de ultimo mes del agua?"))
+    precio_2=int(input("Cual fue el precio de tu recibo atual de agua?"))
+    if(precio_1>precio_2):
+         precio_menor=(precio_1-precio_2)
+         print("Felicidades, ahorrando agua bajaste tu consumo por")
+    elif(precio_1<precio_2):
+             print("Este recibo fue mas alto que el mes pasado, deberias poner mas atencion al consumo del agua en casa")\
+                         #PONER QUE TANTO DINERO FUE MAYOR AL MES PASADO EN LA LINEA 37
+    elif(precio_1==precio_2):
+        print("Su consumo de agua fue el mismo que el mes pasado, nada mal, pero deberia intentar bajar ese precio")
+elif(opcion_agua==2):
+    precio_1=int(input("Cual fue el precio de su ultimo recibo del agua?"))
+    meta=int(input("Cual es su meta de precio para el agua?"))
+    diferencia_meta=(precio_1-meta)
+    if(diferencia_meta<50):
+        print("Vas por buen camino, intenta reducir tiempos al bañar o al lavar platos y lo lograras")#PONER CUANTO FALTA PARA LLEGAR A LA META
+    elif(diferencia_meta>50):
+        print("Aún estas un poco lejos de la meta, deberias esforzarte más al ahorrar agua")#PONER CUANTO FALTA PARA LLEGAR A LA META
+elif(opcion_agua==3):
