@@ -1,3 +1,13 @@
+def imprime_matriz(matriz):
+    print("Lugar    Precio Total    Litros usados")
+    lista_lugar = ["Campanario", "El refugio", "Alamos", "Juriquilla", "Jurica", "El centro", "El pueblito"]
+    
+    for i in range(len(lista_lugar)):
+        lugar = lista_lugar[i]
+        precio_total = matriz[i][0]  
+        litros_usados = matriz[i][1]
+        print(lugar,    "%.2f"%precio_total,    "%.2f"%litros_usados)
+
 def precio_bajo(a,b): #YA SIRVE 
     if precio_1>precio_2:
         return ("Felicidades!! El precio fue mas bajo por", precio_menor)
@@ -42,6 +52,8 @@ juriquilla=0
 jurica=0
 el_centro=0
 el_pueblito=0
+
+matriz_consumo=[[0,0] for x in range(7)]
 def lugar_qro(a): 
     if opcion==1:
         campanario=campanario+1
@@ -72,6 +84,10 @@ lista_lugar=["Campanario(1)","El refugio(2)","Alamos(3)","Juriquilla(4)","Jurica
 for lugar in lista_lugar:
     print(lugar)
 opcion_qro=int(input("En que parte de Queretaro vives, introduce el numero junto a la opcion"))
+
+precio_1=int(input("Cual fue el precio de tu recibo de ultimo mes del agua?"))
+precio_2=int(input("Cual fue el precio de tu recibo actual de agua?"))
+
 if(opcion_qro==1):
     contador=0
     contador=contador+1
@@ -79,6 +95,9 @@ if(opcion_qro==1):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][0] +=precio_2
+    
+
 if (opcion_qro==2):
     contador=0
     contador=contador+1
@@ -86,6 +105,7 @@ if (opcion_qro==2):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][1]+=litros_usados
 elif(opcion_qro==3):
     contador=0
     contador=contador+1
@@ -132,8 +152,6 @@ opcion_agua=int(input("Que opcion quieres realizar?"))
 if opcion_agua>4:
     print ("Esta no es una opción valida")
 if(opcion_agua==1):
-    precio_1=int(input("Cual fue el precio de tu recibo de ultimo mes del agua?"))
-    precio_2=int(input("Cual fue el precio de tu recibo actual de agua?"))
     if(precio_1>precio_2):
         precio_menor=(precio_1-precio_2)
         print(precio_bajo(precio_1,precio_2))
@@ -143,7 +161,6 @@ if(opcion_agua==1):
     elif(precio_1==precio_2):
         print (precio_bajo(precio_1,precio_2))
 elif(opcion_agua==2):
-    precio_1=int(input("Cual fue el precio de su ultimo recibo del agua?"))
     meta=int(input("Cual es su meta de precio para el agua?"))
     diferencia_meta=(precio_1-meta)
     if(diferencia_meta<50):
@@ -172,7 +189,7 @@ elif(opcion_agua==4): #YA MANDA LLAMAR FUNCION
     consumo_personal=(litros_persona(consumo_agua,personas))
     print (consumo_personal)
 
-
+print(imprime_matriz(matriz_consumo))
 
 
     
