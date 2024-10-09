@@ -95,7 +95,7 @@ if(opcion_qro==1):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
-    matriz_consumo[opcion_qro-1][0] +=precio_2
+    matriz_consumo[opcion_qro][0]+=precio_2
     
 
 if (opcion_qro==2):
