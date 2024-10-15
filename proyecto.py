@@ -1,12 +1,12 @@
 def imprime_matriz(matriz):
-    print("Lugar    Precio Total    Litros usados")
+    print("Lugar    Precio total del agua del lugar")
     lista_lugar = ["Campanario", "El refugio", "Alamos", "Juriquilla", "Jurica", "El centro", "El pueblito"]
     
     for i in range(len(lista_lugar)):
         lugar = lista_lugar[i]
         precio_total = matriz[i][0]  
         litros_usados = matriz[i][1]
-        print(lugar,    "%.2f"%precio_total,    "%.2f"%litros_usados)
+        print(lugar,    "%.2f"%precio_total,)
 
 def precio_bajo(a,b): #YA SIRVE 
     if precio_1>precio_2:
@@ -37,13 +37,11 @@ def meta_año(meta_anual):
 def litros(consumo_agua):
     l=0.03
     consumo_agua=(precio/l)
-    return ("Sus litros utilizados este mes fueron","%.2f"%consumo_agua, "litros") #YA SIRVE
+    return consumo_agua
 
 def litros_persona(consumo_agua,personas):
-    consumo_agua=int(input())
-    personas=int(input())
-    consumo_persona=(consumo_agua//personas)
-    return ("El consumo por persona en su casa es de " "%.2f"%(consumo_persona)) #YA SIRVE
+    consumo_persona=consumo_agua/personas
+    return consumo_persona
 
 campanario=0
 el_refugio=0
@@ -95,7 +93,7 @@ if(opcion_qro==1):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
-    matriz_consumo[opcion_qro][0]+=precio_2
+    matriz_consumo[opcion_qro-1][0]+=precio_2
     
 
 if (opcion_qro==2):
@@ -105,7 +103,7 @@ if (opcion_qro==2):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
-    matriz_consumo[opcion_qro-1][1]+=litros_usados
+    matriz_consumo[opcion_qro-1][0]+=precio_2
 elif(opcion_qro==3):
     contador=0
     contador=contador+1
@@ -113,6 +111,7 @@ elif(opcion_qro==3):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][0]+=precio_2
 elif(opcion_qro==4):
     contador=0
     contador=contador+1
@@ -120,6 +119,7 @@ elif(opcion_qro==4):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][0]+=precio_2
 elif(opcion_qro==5):
     contador=0
     contador=contador+1
@@ -127,6 +127,7 @@ elif(opcion_qro==5):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][0]+=precio_2
 elif(opcion_qro==6):
     contador=0
     contador=contador+1
@@ -134,6 +135,7 @@ elif(opcion_qro==6):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][0]+=precio_2
 elif(opcion_qro==7):
     contador=0
     contador=contador+1
@@ -141,6 +143,7 @@ elif(opcion_qro==7):
         print("Es la primera persona de este lugar que usa el programa")
     else:
         print("Van",contador,"personas que usan este programa de ese lugar")
+    matriz_consumo[opcion_qro-1][0]+=precio_2
 
 #Aqui va a ir un contador de cuando seleccionen en que parte viven poder hacer un conteo acerca de cuanta agua consume cada parte de Qro
 #print("Comparar precios del agua del mes actual y el ultimo(1)\nPoner una meta acerca del uso del agua(2)"
@@ -183,11 +186,13 @@ elif(opcion_agua==3): #YA MANDA LLAMAR FUNCION
 elif(opcion_agua==4): #YA MANDA LLAMAR FUNCION
     precio=int(input("Cual fue el precio de su recibo?"))
     consumo_agua=(litros(precio))
-    print(consumo_agua)
+    
+    print("Sus litros utilizados este mes fueron:","%.2f"%consumo_agua,"litros")
     print("El promedio por persona utilizado mensualmente es de 6000 litros")
     personas=int(input("Cuantas personas son en su casa?"))
     consumo_personal=(litros_persona(consumo_agua,personas))
-    print (consumo_personal)
+    
+    print ("El consumo por persona en su casa es de","%.2f"%consumo_personal,"litros por persona")
 
 print(imprime_matriz(matriz_consumo))
 
