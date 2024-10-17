@@ -148,7 +148,7 @@ elif(opcion_qro==7):
 #Aqui va a ir un contador de cuando seleccionen en que parte viven poder hacer un conteo acerca de cuanta agua consume cada parte de Qro
 #print("Comparar precios del agua del mes actual y el ultimo(1)\nPoner una meta acerca del uso del agua(2)"
 #"\nCalcular su consumo diario(3)\nCalcular cuantos litros uso este mes(4)")
-lista_opcion=["Comparar precios del agua del mes atual y mes pasado(1)","Poner meta del uso del agua(2)","Calcular su consumo diario(3)","Calcular litros usados este mes(4)"]
+lista_opcion=["Comparar precios del agua del mes actual y mes pasado(1)","Poner meta del uso del agua(2)","Calcular su consumo diario(3)","Calcular litros usados este mes(4)"]
 for opcion in lista_opcion:
     print(opcion)
 opcion_agua=int(input("Que opcion quieres realizar?"))
