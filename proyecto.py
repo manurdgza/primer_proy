@@ -10,7 +10,7 @@ def imprime_matriz(matriz):
 
 def precio_bajo(a,b): #YA SIRVE 
     if precio_1>precio_2:
-        return ("Felicidades!! El precio fue mas bajo por", precio_menor)
+        return 'Felicidades!! El precio fue mas bajo por', precio_menor
     if precio_1==precio_2:
         return("Su consumo de agua fue el mismo que el mes pasado, nada mal, pero deberia intentar bajar ese precio")
     return("Este recibo fue mas alto que el mes pasado, deberias poner mas atencion al consumo del agua en casa por $", precio_mayor)
@@ -24,7 +24,7 @@ def faltante_meta(a,b): #YA SIRVE
     
 def precio_dia(a,b):
     precio_diario=(a/b)
-    return ("Su total diario fue de $",precio_diario) #YA SIRVE
+    return ("Su total diario fue de $","%.2f"%precio_diario) #YA SIRVE
 
 def precio_año(a,b):
     precio_anual=(precio_diario*365)
