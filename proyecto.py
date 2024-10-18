@@ -1,4 +1,4 @@
-def imprime_matriz(matriz):
+def imprime_matriz(matriz): #Esta se usa para imprimir la matriz y guardar los precios de los lugares
     print("Lugar    Precio total del agua del lugar")
     lista_lugar = ["Campanario", "El refugio", "Alamos", "Juriquilla", "Jurica", "El centro", "El pueblito"]
     
@@ -8,21 +8,22 @@ def imprime_matriz(matriz):
         litros_usados = matriz[i][1]
         print(lugar,    "%.2f"%precio_total,)
 
-def precio_bajo(a,b): #YA SIRVE 
+def precio_bajo(a,b): #Esta sirve para cuando el precio es mas bajo en la opción 1
     if precio_1>precio_2:
         return 'Felicidades!! El precio fue mas bajo por', precio_menor
     if precio_1==precio_2:
         return("Su consumo de agua fue el mismo que el mes pasado, nada mal, pero deberia intentar bajar ese precio")
-    return("Este recibo fue mas alto que el mes pasado, deberias poner mas atencion al consumo del agua en casa por $", precio_mayor)
+    return("Este recibo fue mas alto que el mes pasado,deberias ponermas atencion al consumo del agua en casa por $", precio_mayor)
     
 
-def faltante_meta(a,b): #YA SIRVE
+def faltante_meta(a,b): #Sirve para calcular lo que falta para llegar a la meta mensual
     diferencia_meta=(a-b)
     if diferencia_meta<50:
-        return ('Vas por buen camino, intenta reducir tiempos al bañar o al lavar platos y lo lograras, te falta $',diferencia_meta,'para lograrlo')
+        return ('Vas por buen camino, intenta reducir tiempos al bañar o al lavar platos y'
+                +'lo lograras, te falta $',diferencia_meta,'para lograrlo')
     return ("Aún estas un poco lejos de la meta, deberias esforzarte más al ahorrar agua, te falta $",diferencia_meta )
     
-def precio_dia(a,b):
+def precio_dia(a,b): #Para calcular el precio diario de cada mes
     precio_diario=(a/b)
     return ("Su total diario fue de $","%.2f"%precio_diario) #YA SIRVE
 
@@ -30,16 +31,16 @@ def precio_año(a,b):
     precio_anual=(precio_diario*365)
     return ("Si sigue asi su gasto anual de agua sera de $","%.2f"%(precio_anual)) #YA SIRVE
 
-def meta_año(meta_anual):
+def meta_año(meta_anual): #Para calcular la meta anual y cuanto de sebe de gastar al día
     calculo_anual=(meta/365)
     return ("Su consumo diario deberia de ser de $","%.2f"%(calculo_anual)) #YA SIRVE
 
-def litros(consumo_agua):
+def litros(consumo_agua): #Calcular el consumo de agua basandonos en el precio 
     l=0.03
     consumo_agua=(precio/l)
     return consumo_agua
 
-def litros_persona(consumo_agua,personas):
+def litros_persona(consumo_agua,personas): #Dividir el consumo de litros por cada persona en la casa
     consumo_persona=consumo_agua/personas
     return consumo_persona
 
@@ -77,7 +78,6 @@ def lugar_qro(a):
         
 
 print("Hola, este software te va a ayudar a rastrear tu consumo de agua")
-#print("Campanario(1)\nEl refugio(2)\nAlamos(3)\nJuriquilla(4)\nJurica(5)\nCentro(6)\nEl Pueblito(7)")
 lista_lugar=["Campanario(1)","El refugio(2)","Alamos(3)","Juriquilla(4)","Jurica(5)","El centro(6)","El pueblito(7)"]
 for lugar in lista_lugar:
     print(lugar)
@@ -145,9 +145,7 @@ elif(opcion_qro==7):
         print("Van",contador,"personas que usan este programa de ese lugar")
     matriz_consumo[opcion_qro-1][0]+=precio_2
 
-#Aqui va a ir un contador de cuando seleccionen en que parte viven poder hacer un conteo acerca de cuanta agua consume cada parte de Qro
-#print("Comparar precios del agua del mes actual y el ultimo(1)\nPoner una meta acerca del uso del agua(2)"
-#"\nCalcular su consumo diario(3)\nCalcular cuantos litros uso este mes(4)")
+
 lista_opcion=["Comparar precios del agua del mes actual y mes pasado(1)","Poner meta del uso del agua(2)","Calcular su consumo diario(3)","Calcular litros usados este mes(4)"]
 for opcion in lista_opcion:
     print(opcion)
