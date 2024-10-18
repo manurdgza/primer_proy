@@ -4,3 +4,4 @@ Durante los últimos años, el agua ha sido un problema en Querétaro, y siempre
 
 
 #En conclusión este proyecto puede ayudar demasiado ya que al momento de saber los datos acerca del agua, podemos darnos cuenta de nuestro consumo del agua, y así vamos a ser capaces de poder considerar lo que estamos haciendo con el agua en nuestra casa, y tal vez poner límites acerca del uso de agua para poder gastar menos, y poder desperdiciar menos agua. 
+El proyecto es el de nombre "proyecto.py"
